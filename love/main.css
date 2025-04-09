@@ -172,3 +172,31 @@ p {
 .highlight {
   white-space: nowrap; /* prevents line-breaks within the span */
 }
+
+/* Rising text animation */
+@keyframes riseUp {
+    0% {
+        transform: translate(-50%, 0); /* Start at the center horizontally */
+    }
+    100% {
+        transform: translate(-50%, -300px); /* Move upward while keeping centered */
+    }
+}
+
+#spin-container p {
+    position: absolute;
+    bottom: 50px; /* Initial position */
+    left: 50%;
+    transform: translate(-50%, 0); /* Center the text horizontally */
+    font-size: 30px;
+    font-family: 'Dancing Script', cursive;
+    color: #ff00ee; /* Pink color */
+    font-weight: bold; /* Keep the text bold */
+    text-align: center; /* Ensure text alignment is centered */
+    white-space: nowrap; /* Prevent line breaks */
+    z-index: 200; /* Ensure it stays above the rotating images */
+}
+
+#spin-container p.rise {
+    animation: riseUp 2s forwards; /* Trigger rising animation */
+}
