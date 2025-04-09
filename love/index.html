@@ -134,6 +134,9 @@
                     }
                 });
 
+                const textElement = document.querySelector("#spin-container p");
+                textElement.classList.add("rise");
+
                 requestAnimationFrame(animate);
             }
             animate();
