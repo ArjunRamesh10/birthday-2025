@@ -52,6 +52,20 @@ function playSpin(yes) {
   ospin.style.animationPlayState = (yes?'running':'paused');
 }
 
+// Trigger rising text after spinning completes
+function triggerRisingText() {
+    const textElement = document.querySelector("#spin-container p");
+    textElement.classList.add("rise");
+}
+
+// Delay the rising text animation until the spinning stops
+setTimeout(() => {
+    triggerRisingText();
+}, 5000); // Adjust the delay (in milliseconds) to match the spinning duration
+
+// Ensure the text remains stationary while the images rotate
+ospin.style.animation = "spin 5s infinite linear"; // Adjust duration as needed
+
 var sX, sY, nX, nY, desX = 0,
     desY = 0,
     tX = 0,
